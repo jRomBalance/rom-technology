@@ -1,0 +1,1038 @@
+/* ═══════════════════════════════════════════════════════════════
+   ROM TECHNOLOGY — rom-tech.css
+   Built to Last — jeROMe Allen
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── CSS Custom Properties ────────────────────────────────────────────────────────────── */
+:root {
+  --rom-navy:        #0d1b2a;
+  --rom-navy-mid:    #0f2236;
+  --rom-slate:       #1e293b;
+  --rom-slate-mid:   #334155;
+  --rom-green-dark:  #1b4332;
+  --rom-green:       #2d6a4f;
+  --rom-green-mid:   #40916c;
+  --rom-green-light: #52b788;
+  --rom-blue:        #7eb8d4;
+  --rom-silver:      #94a3b8;
+  --rom-white:       #ffffff;
+  --rom-text:        #e2e8f0;
+
+  --rom-font-sans:    'Segoe UI', system-ui, -apple-system, sans-serif;
+  --rom-font-display: 'Arial Black', 'Helvetica Neue', Impact, sans-serif;
+  --rom-font-mono:    ui-monospace, 'Courier New', monospace;
+
+  --rom-radius:    8px;
+  --rom-radius-lg: 14px;
+  --rom-radius-xl: 20px;
+
+  --rom-shadow:    0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --rom-shadow-lg: 0 10px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.3);
+  --rom-shadow-xl: 0 20px 40px rgba(0,0,0,0.5);
+
+  --rom-glow-green: 0 0 20px rgba(45,106,79,0.4);
+
+  /* Header transition */
+  --rom-header-height-full:  80px;
+  --rom-header-height-small: 56px;
+  --rom-header-transition:   all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--rom-navy);
+  color: var(--rom-text);
+  font-family: var(--rom-font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ── Circuit grid overlay ─────────────────────────────────────────────────────────────── */
+.rom-circuit-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(26,45,61,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,45,61,0.4) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER — Shrinking sticky logo
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--rom-header-height-full);
+  background: transparent;
+  transition: var(--rom-header-transition);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.rom-header.scrolled {
+  height: var(--rom-header-height-small);
+  background: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* ── Logo container ── */
+.rom-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: var(--rom-header-transition);
+}
+
+.rom-logo-img {
+  transition: var(--rom-header-transition);
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.rom-header.scrolled .rom-logo-img {
+  width: 36px;
+  height: 36px;
+}
+
+.rom-logo-text {
+  display: flex;
+  flex-direction: column;
+  transition: var(--rom-header-transition);
+}
+
+.rom-logo-name {
+  font-family: var(--rom-font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--rom-white);
+  letter-spacing: -0.3px;
+  line-height: 1;
+  transition: var(--rom-header-transition);
+}
+
+.rom-header.scrolled .rom-logo-name {
+  font-size: 1rem;
+}
+
+.rom-logo-tagline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--rom-blue);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: var(--rom-header-transition);
+  opacity: 1;
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.rom-header.scrolled .rom-logo-tagline {
+  opacity: 0;
+  max-height: 0;
+}
+
+/* ── Navigation ── */
+.rom-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rom-nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.rom-nav a:hover {
+  color: var(--rom-white);
+  background: rgba(45,106,79,0.2);
+}
+
+.rom-nav a.active {
+  color: var(--rom-green-light);
+  background: rgba(45,106,79,0.15);
+}
+
+/* Mobile nav toggle */
+.rom-nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--rom-white);
+  border-radius: var(--rom-radius);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: auto;
+}
+
+/* ── Navigation submenu dark theme ── */
+.wp-block-navigation .wp-block-navigation__submenu-container {
+  background: rgba(13, 27, 42, 0.98) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 106, 79, 0.3) !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+  min-width: 180px;
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-container a {
+  color: var(--rom-text) !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-container a:hover {
+  background: rgba(45, 106, 79, 0.2) !important;
+  color: var(--rom-green-light) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO — Full screen logo entrance
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial glow behind logo */
+.rom-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center,
+    rgba(45,106,79,0.12) 0%,
+    rgba(27,67,50,0.06) 40%,
+    transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Hero logo ── */
+.rom-hero-logo {
+  width: min(320px, 80vw);
+  height: auto;
+  margin-bottom: 32px;
+  animation: romLogoEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  filter: drop-shadow(0 0 40px rgba(45,106,79,0.3));
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rom-hero-logo img {
+  width: min(320px, 80vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* WordPress figure wrapper */
+.rom-hero .wp-block-image {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rom-hero .wp-block-image img {
+  display: block;
+  margin: 0 auto;
+}
+
+.rom-hero figure {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@keyframes romLogoEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Hero profile photo ── */
+.rom-hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 3px solid var(--rom-green);
+  box-shadow:
+    0 0 0 6px rgba(45,106,79,0.15),
+    0 0 30px rgba(45,106,79,0.3);
+  margin: 0 auto 24px;
+  display: block;
+  animation: romLogoEntrance 1s 0.4s both;
+}
+
+figure.rom-hero-photo img,
+.wp-block-image.rom-hero-photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 3px solid var(--rom-green);
+  box-shadow:
+    0 0 0 6px rgba(45,106,79,0.15),
+    0 0 30px rgba(45,106,79,0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+figure.rom-hero-photo,
+.wp-block-image.rom-hero-photo {
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── jeROMe name treatment ── */
+.rom-hero-jerome {
+  font-family: var(--rom-font-sans);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--rom-silver);
+  text-align: center;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+  animation: romFadeUp 1s 0.5s both;
+}
+
+.rom-hero-jerome strong {
+  font-family: var(--rom-font-display);
+  font-weight: 900;
+  color: var(--rom-green-light);
+}
+
+/* ── Hero name (alternate) ── */
+.rom-hero-name {
+  font-family: var(--rom-font-display);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: var(--rom-white);
+  text-align: center;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+  animation: romFadeUp 1s 0.5s both;
+}
+
+.rom-hero-name .rom-highlight,
+.rom-highlight {
+  color: var(--rom-green-light);
+}
+
+.rom-hero-title {
+  font-family: var(--rom-font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--rom-white);
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+  animation: romFadeUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rom-hero-subtitle {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--rom-blue);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 24px;
+  animation: romFadeUp 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rom-hero-tagline {
+  font-size: 1.05rem;
+  color: var(--rom-silver);
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 0 auto 40px;
+  animation: romFadeUp 1s 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rom-hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: romFadeUp 1s 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes romFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll indicator */
+.rom-scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: romFadeUp 1s 1.2s both, romBounce 2s 2s infinite;
+}
+
+.rom-scroll-hint::after {
+  content: '↓';
+  font-size: 1rem;
+}
+
+@keyframes romBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── Split pill button ── */
+.split-pill-btn {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid var(--rom-green);
+  background: var(--rom-green);
+}
+
+.split-pill-btn__main {
+  background: var(--rom-green);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.split-pill-btn__main:hover {
+  background: var(--rom-green-dark);
+}
+
+.split-pill-btn__divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.split-pill-btn__mic {
+  background: var(--rom-green);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.split-pill-btn__mic:hover {
+  background: var(--rom-green-dark);
+}
+
+.split-pill-btn--sm .split-pill-btn__main {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+
+.split-pill-btn--sm .split-pill-btn__mic {
+  padding: 7px 10px;
+  font-size: 0.88rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.rom-btn-primary {
+  background: linear-gradient(135deg, var(--rom-green-dark), var(--rom-green));
+  color: var(--rom-white);
+}
+
+.rom-btn-primary:hover {
+  background: linear-gradient(135deg, var(--rom-green), var(--rom-green-mid));
+  transform: translateY(-2px);
+  box-shadow: var(--rom-glow-green);
+  color: var(--rom-white);
+}
+
+.rom-btn-outline {
+  background: transparent;
+  color: var(--rom-green-light);
+  border: 2px solid var(--rom-green);
+}
+
+.rom-btn-outline:hover {
+  background: rgba(45,106,79,0.15);
+  border-color: var(--rom-green-light);
+  color: var(--rom-green-light);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.rom-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rom-green-light);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.rom-section-title {
+  font-family: var(--rom-font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--rom-white);
+  margin: 0 0 16px;
+  letter-spacing: -0.3px;
+}
+
+.rom-section-subtitle {
+  font-size: 1.05rem;
+  color: var(--rom-silver);
+  max-width: 560px;
+  line-height: 1.7;
+  margin: 0 0 48px;
+}
+
+/* Divider */
+.rom-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--rom-green) 30%,
+    var(--rom-green) 70%,
+    transparent 100%);
+  opacity: 0.3;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROJECT CARDS
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.rom-card {
+  background: var(--rom-slate);
+  border: 1px solid rgba(45,106,79,0.2);
+  border-radius: var(--rom-radius-lg);
+  padding: 28px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.rom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rom-green), var(--rom-green-light));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.rom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rom-shadow-lg);
+  border-color: rgba(45,106,79,0.5);
+}
+
+.rom-card:hover::before {
+  opacity: 1;
+}
+
+.rom-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.rom-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rom-white);
+  margin: 0 0 8px;
+}
+
+.rom-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.rom-card-title a:hover {
+  color: var(--rom-green-light);
+}
+
+.rom-card-title a[target="_blank"]::after {
+  content: ' ↗';
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+.rom-card-desc {
+  font-size: 0.875rem;
+  color: var(--rom-silver);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.rom-card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(45,106,79,0.2);
+  color: var(--rom-green-light);
+  margin-top: 16px;
+  border: 1px solid rgba(45,106,79,0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SKILLS / TECH STACK
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Fix WordPress paragraph wrapper breaking flex layout */
+.rom-skills-grid .wp-block-paragraph,
+.rom-skills-grid p {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: contents !important;
+}
+
+.rom-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--rom-slate);
+  color: var(--rom-text);
+  border: 1px solid rgba(45,106,79,0.25);
+  transition: all 0.18s;
+  text-decoration: none;
+}
+
+.rom-skill-chip:hover {
+  background: rgba(45,106,79,0.15);
+  border-color: var(--rom-green);
+  color: var(--rom-green-light);
+  text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-contact-card {
+  background: linear-gradient(135deg, var(--rom-green-dark) 0%, var(--rom-green) 100%);
+  border-radius: var(--rom-radius-xl);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rom-contact-card::before {
+  content: '🎾';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 6rem;
+  opacity: 0.08;
+}
+
+.rom-contact-card h2 {
+  color: var(--rom-white);
+  margin: 0 0 12px;
+}
+
+.rom-contact-card p {
+  color: rgba(255,255,255,0.8);
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+
+.rom-footer {
+  background: var(--rom-navy-mid);
+  border-top: 1px solid rgba(45,106,79,0.2);
+  padding: 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rom-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rom-footer-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.rom-footer-name {
+  font-family: var(--rom-font-display);
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--rom-white);
+}
+
+.rom-footer-copy {
+  font-size: 0.75rem;
+  color: var(--rom-slate-mid);
+}
+
+.rom-footer-copy span {
+  color: var(--rom-green-light);
+}
+
+.rom-footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.rom-footer-links a {
+  font-size: 0.8rem;
+  color: var(--rom-silver);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.rom-footer-links a:hover {
+  color: var(--rom-green-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WORDPRESS CONTENT OVERRIDES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Main content area */
+.wp-site-blocks {
+  background: var(--rom-navy);
+}
+
+/* Push content below fixed header */
+.wp-site-blocks > * + * {
+  margin-top: 0;
+}
+
+main.wp-block-group {
+  padding-top: var(--rom-header-height-full);
+}
+
+/* WordPress navigation block */
+.wp-block-navigation {
+  color: var(--rom-text) !important;
+}
+
+.wp-block-navigation a {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.wp-block-navigation a:hover {
+  color: var(--rom-green-light) !important;
+}
+
+/* WordPress site header block */
+.wp-block-template-part header,
+header.wp-block-template-part {
+  background: transparent !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--rom-header-transition);
+}
+
+header.wp-block-template-part.scrolled {
+  background: rgba(13, 27, 42, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.3);
+}
+
+/* Site logo */
+.wp-block-site-logo img {
+  transition: var(--rom-header-transition);
+}
+
+/* Paragraphs */
+.wp-block-post-content p,
+.entry-content p {
+  color: var(--rom-silver);
+  line-height: 1.75;
+}
+
+/* Headings in content */
+.wp-block-post-content h1,
+.wp-block-post-content h2,
+.wp-block-post-content h3,
+.entry-content h1,
+.entry-content h2,
+.entry-content h3 {
+  color: var(--rom-white);
+  font-family: var(--rom-font-display);
+}
+
+/* Lists */
+.wp-block-post-content ul,
+.wp-block-post-content ol {
+  color: var(--rom-silver);
+}
+
+/* Separator */
+.wp-block-separator {
+  border-color: rgba(45,106,79,0.3) !important;
+}
+
+/* Cover block */
+.wp-block-cover {
+  background-color: var(--rom-navy) !important;
+}
+
+/* Group blocks */
+.wp-block-group {
+  background: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .rom-header {
+    padding: 0 16px;
+  }
+
+  .rom-nav {
+    display: none;
+    position: fixed;
+    top: var(--rom-header-height-small);
+    left: 0;
+    right: 0;
+    background: rgba(13,27,42,0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid rgba(45,106,79,0.3);
+    gap: 4px;
+  }
+
+  .rom-nav.open {
+    display: flex;
+  }
+
+  .rom-nav a {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--rom-radius);
+  }
+
+  .rom-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rom-hero-logo {
+    width: min(260px, 75vw);
+  }
+
+  .rom-contact-card {
+    padding: 36px 24px;
+  }
+
+  .rom-contact-card::before {
+    display: none;
+  }
+
+  .rom-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  .rom-footer-links {
+    justify-content: center;
+  }
+
+  .rom-section {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rom-hero {
+    padding: 100px 16px 60px;
+  }
+
+  .rom-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS & UTILITIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fade in on scroll */
+.rom-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rom-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Green text accent */
+.rom-accent { color: var(--rom-green-light); }
+.rom-blue-accent { color: var(--rom-blue); }
+
+/* Monospace text */
+.rom-mono {
+  font-family: var(--rom-font-mono);
+  font-size: 0.85em;
+  color: var(--rom-green-light);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(45,106,79,0.4);
+  color: var(--rom-white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--rom-navy); }
+::-webkit-scrollbar-thumb {
+  background: var(--rom-green);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--rom-green-mid); }
