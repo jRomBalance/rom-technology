@@ -1,0 +1,30 @@
+<!-- wp:group {"className":"rom-footer","tagName":"footer","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<footer class="wp-block-group rom-footer">
+<!-- Brand -->
+<!-- wp:group {"className":"rom-footer-brand","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group rom-footer-brand">
+<!-- wp:site-logo {"width":32,"className":"rom-footer-logo","shouldSyncIcon":false} /-->
+<!-- wp:site-title {"className":"rom-footer-name","level":0,"isLink":true} /-->
+</div>
+<!-- /wp:group -->
+<!-- Copyright -->
+<!-- wp:paragraph {"className":"rom-footer-copy","align":"center"} -->
+<p class="rom-footer-copy has-text-align-center">
+    © <span id="rom-year"></span> <span>jeROMe</span> Allen · ROM Technology · Built to Last
+  </p>
+<!-- /wp:paragraph -->
+<!-- Footer links -->
+<!-- wp:navigation {"className":"rom-footer-links","overlayMenu":"never","layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
+<!-- wp:navigation-link {"label":"Privacy Policy","url":"/privacy-policy"} /-->
+<!-- wp:navigation-link {"label":"Contact","url":"/contact"} /-->
+<!-- wp:navigation-link {"label":"Heads Up Sport","url":"/heads-up-sport"} /-->
+<!-- /wp:navigation -->
+</footer>
+<!-- /wp:group -->
+<!-- Dynamic year script -->
+<script>
+  (function() {
+    var el = document.getElementById('rom-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="chipF5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b4332"/>
+      <stop offset="100%" style="stop-color:#0f2d1f"/>
+    </linearGradient>
+    <linearGradient id="faceF5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1f17"/>
+      <stop offset="100%" style="stop-color:#081510"/>
+    </linearGradient>
+    <linearGradient id="greenF5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f"/>
+      <stop offset="100%" style="stop-color:#52b788"/>
+    </linearGradient>
+    <linearGradient id="pinF5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7f8ea3"/>
+      <stop offset="100%" style="stop-color:#b0bec5"/>
+    </linearGradient>
+    <filter id="glowF5">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadowF5">
+      <feDropShadow dx="0" dy="8" stdDeviation="20"
+                    flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <pattern id="gridF5" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1a2d3d" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- Background rounded square — Apple Touch Icon / Android -->
+  <rect width="512" height="512" rx="112" fill="#0d1b2a"/>
+  <!-- Grid -->
+  <rect width="512" height="512" rx="112" fill="url(#gridF5)" opacity="0.5"/>
+
+  <!-- Chip body -->
+  <rect x="116" y="80" width="280" height="352" rx="28"
+        fill="url(#chipF5)" filter="url(#shadowF5)"/>
+  <!-- Green top accent -->
+  <rect x="116" y="72" width="280" height="10" rx="6" fill="url(#greenF5)"/>
+  <!-- Chip border -->
+  <rect x="116" y="80" width="280" height="352" rx="28"
+        fill="none" stroke="#2d6a4f" stroke-width="2.5" opacity="0.8"/>
+
+  <!-- Left pins — 6 pins -->
+  <rect x="52"  y="116" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="116" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="52"  y="164" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="164" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="52"  y="212" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="212" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="52"  y="260" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="260" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="52"  y="308" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="308" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="52"  y="356" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="52"  y="356" width="10" height="28" rx="4" fill="#4a5568"/>
+
+  <!-- Right pins — 6 pins -->
+  <rect x="396" y="116" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="116" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="396" y="164" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="164" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="396" y="212" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="212" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="396" y="260" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="260" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="396" y="308" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="308" width="10" height="28" rx="4" fill="#4a5568"/>
+  <rect x="396" y="356" width="64" height="28" rx="6" fill="url(#pinF5)"/>
+  <rect x="450" y="356" width="10" height="28" rx="4" fill="#4a5568"/>
+
+  <!-- Notch -->
+  <path d="M216 80 Q256 48 296 80" fill="#0d1b2a" stroke="#2d6a4f" stroke-width="2"/>
+
+  <!-- Die face -->
+  <rect x="140" y="108" width="232" height="296" rx="12"
+        fill="url(#faceF5)" stroke="#1b4332" stroke-width="1.5"/>
+
+  <!-- Scan lines -->
+  <rect x="140" y="148" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+  <rect x="140" y="188" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+  <rect x="140" y="228" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+  <rect x="140" y="268" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+  <rect x="140" y="308" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+  <rect x="140" y="348" width="232" height="1" fill="#1b4332" opacity="0.5"/>
+
+  <!-- ROM text glow -->
+  <text x="259" y="260" font-family="'Arial Black', Impact, sans-serif"
+        font-size="110" font-weight="900" text-anchor="middle"
+        fill="#2d6a4f" opacity="0.3" filter="url(#glowF5)">ROM</text>
+  <!-- ROM text main -->
+  <text x="259" y="260" font-family="'Arial Black', Impact, sans-serif"
+        font-size="110" font-weight="900" text-anchor="middle"
+        fill="#ffffff" letter-spacing="8">ROM</text>
+
+  <!-- Green underline -->
+  <rect x="156" y="274" width="200" height="6" rx="3"
+        fill="url(#greenF5)" filter="url(#glowF5)"/>
+
+  <!-- Technology subheading INSIDE chip -->
+  <text x="258" y="348" font-family="'Arial', 'Helvetica Neue', sans-serif"
+        font-size="42" font-weight="300" text-anchor="middle"
+        fill="#52b788" letter-spacing="6" opacity="0.9">Technology</text>
+
+  <!-- Thin line below Technology -->
+  <line x1="288" y1="374" x2="232" y2="374"
+        stroke="#52b788" stroke-width="0.6" opacity="0.6"/>
+
+  <!-- Corner nodes -->
+  <circle cx="132" cy="94"  r="6" fill="#2d6a4f" opacity="0.9" filter="url(#glowF5)"/>
+  <circle cx="380" cy="94"  r="6" fill="#2d6a4f" opacity="0.9" filter="url(#glowF5)"/>
+  <circle cx="132" cy="418" r="6" fill="#2d6a4f" opacity="0.9" filter="url(#glowF5)"/>
+  <circle cx="380" cy="418" r="6" fill="#2d6a4f" opacity="0.9" filter="url(#glowF5)"/>
+
+  <!-- BUILT TO LAST tagline -->
+  <text x="262" y="460" font-family="'Arial', sans-serif"
+        font-size="22" font-weight="600" text-anchor="middle"
+        fill="#7eb8d4" letter-spacing="8" opacity="0.9">BUILT · TO · LAST</text>
+</svg>

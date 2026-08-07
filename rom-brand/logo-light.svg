@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="chipLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="greenLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f"/>
+      <stop offset="100%" style="stop-color:#40916c"/>
+    </linearGradient>
+    <linearGradient id="pinLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#94a3b8"/>
+      <stop offset="100%" style="stop-color:#cbd5e1"/>
+    </linearGradient>
+    <filter id="shadowLight">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1e293b" flood-opacity="0.15"/>
+    </filter>
+    <pattern id="circuitLight" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 20 L10 20 L10 10 L20 10" stroke="#e2e8f0" stroke-width="0.8" fill="none"/>
+      <path d="M40 20 L30 20 L30 30 L20 30" stroke="#e2e8f0" stroke-width="0.8" fill="none"/>
+      <circle cx="10" cy="10" r="1.5" fill="#cbd5e1"/>
+      <circle cx="30" cy="30" r="1.5" fill="#cbd5e1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="195" fill="url(#bgLight)"/>
+  <circle cx="200" cy="200" r="195" fill="url(#circuitLight)" opacity="0.8"/>
+  <circle cx="200" cy="200" r="193" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Chip body -->
+  <rect x="105" y="130" width="190" height="140" rx="12"
+        fill="url(#chipLight)" filter="url(#shadowLight)"/>
+  <rect x="105" y="130" width="190" height="5" rx="3" fill="url(#greenLight)"/>
+  <rect x="108" y="133" width="184" height="134" rx="10"
+        fill="none" stroke="#334155" stroke-width="1" opacity="0.6"/>
+
+  <!-- Left pins -->
+  <rect x="72" y="148" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="72" y="168" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="72" y="188" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="72" y="208" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="72" y="228" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="72" y="248" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+
+  <!-- Right pins -->
+  <rect x="295" y="148" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="295" y="168" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="295" y="188" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="295" y="208" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="295" y="228" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+  <rect x="295" y="248" width="33" height="10" rx="2" fill="url(#pinLight)"/>
+
+  <!-- Notch -->
+  <path d="M185 130 Q200 118 215 130" fill="#f1f5f9" stroke="#334155" stroke-width="1"/>
+
+  <!-- Die area -->
+  <rect x="130" y="152" width="140" height="96" rx="4"
+        fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <line x1="130" y1="175" x2="270" y2="175" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+  <line x1="130" y1="200" x2="270" y2="200" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+  <line x1="130" y1="225" x2="270" y2="225" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+  <line x1="165" y1="152" x2="165" y2="248" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+  <line x1="200" y1="152" x2="200" y2="248" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+  <line x1="235" y1="152" x2="235" y2="248" stroke="#1e3a2f" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- ROM text -->
+  <text x="200" y="213" font-family="'Arial Black', Impact, sans-serif"
+        font-size="52" font-weight="900" text-anchor="middle"
+        fill="#ffffff" letter-spacing="4">ROM</text>
+  <rect x="148" y="220" width="104" height="3" rx="1.5" fill="url(#greenLight)"/>
+
+  <!-- Corner dots -->
+  <circle cx="120" cy="145" r="3" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="280" cy="145" r="3" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="120" cy="265" r="3" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="280" cy="265" r="3" fill="#2d6a4f" opacity="0.8"/>
+
+  <!-- Tagline -->
+  <text x="200" y="310" font-family="'Arial', sans-serif"
+        font-size="11" font-weight="400" text-anchor="middle"
+        fill="#94a3b8" letter-spacing="3">READ · ONLY · MEMORY</text>
+
+  <!-- jeROMe text below -->
+  <text x="200" y="340" font-family="'Arial', sans-serif"
+        font-size="14" font-weight="400" text-anchor="middle" fill="#94a3b8">je</text>
+  <text x="222" y="340" font-family="'Arial Black', sans-serif"
+        font-size="14" font-weight="900" text-anchor="middle" fill="#2d6a4f">ROM</text>
+  <text x="244" y="340" font-family="'Arial', sans-serif"
+        font-size="14" font-weight="400" text-anchor="middle" fill="#94a3b8">e</text>
+
+  <!-- Outer accent dots -->
+  <circle cx="200" cy="50" r="2.5" fill="#2d6a4f" opacity="0.4"/>
+  <circle cx="200" cy="370" r="2.5" fill="#2d6a4f" opacity="0.4"/>
+  <circle cx="50" cy="200" r="2.5" fill="#2d6a4f" opacity="0.4"/>
+  <circle cx="350" cy="200" r="2.5" fill="#2d6a4f" opacity="0.4"/>
+</svg>

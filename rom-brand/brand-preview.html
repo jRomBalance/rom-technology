@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROM Allen — Brand Kit</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #e2e8f0;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .brand-header {
+    padding: 60px 40px 40px;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+  }
+  .brand-header h1 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #40916c;
+    margin-bottom: 12px;
+  }
+  .brand-header h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .brand-header p {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Grid ── */
+  .brand-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  /* ── Card ── */
+  .brand-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+  }
+  .brand-card-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    min-height: 240px;
+  }
+  .brand-card-preview.dark  { background: #0f172a; }
+  .brand-card-preview.light { background: #f8fafc; }
+  .brand-card-preview.green { background: linear-gradient(135deg, #1b4332, #2d6a4f); }
+  .brand-card-preview.gray  { background: #1e293b; }
+  .brand-card-preview img,
+  .brand-card-preview svg   { max-width: 100%; max-height: 180px; }
+  .brand-card-info {
+    padding: 16px 20px;
+    background: #111827;
+    border-top: 1px solid #1e293b;
+  }
+  .brand-card-info h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+  }
+  .brand-card-info p {
+    font-size: 0.75rem;
+    color: #475569;
+  }
+
+  /* ── Wide card ── */
+  .brand-card--wide {
+    grid-column: 1 / -1;
+  }
+  .brand-card--wide .brand-card-preview {
+    min-height: 160px;
+  }
+
+  /* ── Color palette ── */
+  .palette-section {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .palette-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #40916c;
+    margin-bottom: 20px;
+  }
+  .palette-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .palette-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 100px;
+  }
+  .swatch-color {
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .swatch-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #e2e8f0;
+  }
+  .swatch-hex {
+    font-size: 0.68rem;
+    color: #475569;
+    font-family: monospace;
+  }
+
+  /* ── Typography ── */
+  .type-section {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .type-sample {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 32px;
+    display: grid;
+    gap: 20px;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e293b;
+  }
+  .type-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .type-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    min-width: 100px;
+  }
+
+  /* ── Tagline section ── */
+  .tagline-section {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .tagline-card {
+    background: linear-gradient(135deg, #0f2d1f 0%, #1b4332 50%, #0f2d1f 100%);
+    border: 1px solid #2d6a4f;
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .tagline-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(64,145,108,0.1) 0%, transparent 70%);
+  }
+  .tagline-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #40916c;
+    margin-bottom: 16px;
+  }
+  .tagline-main {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .tagline-main span { color: #40916c; }
+  .tagline-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Usage section ── */
+  .usage-section {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .usage-card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .usage-card h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #40916c;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .usage-card p {
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #40916c;
+    margin-bottom: 20px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+    padding-top: 0;
+  }
+  .section-gap { height: 48px; }
+</style>
+</head>
+<body>
+<!-- ── HEADER ── -->
+<div class="brand-header">
+<h1>Personal Brand Identity</h1>
+<h2>ROM Allen</h2>
+<p>A technologist rooted in resilience, building tools that restore connection.</p>
+</div>
+<!-- ── LOGO VARIANTS ── -->
+<div class="section-gap"></div>
+<div class="section-label">Logo Variants</div>
+<div class="brand-grid">
+<!-- Dark background (primary) -->
+<div class="brand-card">
+<div class="brand-card-preview dark">
+<img alt="ROM Allen Logo Dark" src="logo.svg?expires=1784990420&amp;signature=9fc52eb74db7c61bca4d2a8a6be9e7861674e5b913cbb4c1e203f8ac4c04ae39"/>
+</div>
+<div class="brand-card-info">
+<h3>Primary — Dark Background</h3>
+<p>Main logo · Use on dark surfaces, headers, splash screens</p>
+</div>
+</div>
+<!-- Light background -->
+<div class="brand-card">
+<div class="brand-card-preview light">
+<img alt="ROM Allen Logo Light" src="logo-light.svg?expires=1784990420&amp;signature=7f0f4c61b7fdf6b344a5795769e298fa9b4180ac1192339fda18541f36daa9af"/>
+</div>
+<div class="brand-card-info">
+<h3>Light Background Variant</h3>
+<p>Use on white/light surfaces, print, documents</p>
+</div>
+</div>
+<!-- Green background -->
+<div class="brand-card">
+<div class="brand-card-preview green">
+<img alt="ROM Allen Logo on Green" src="logo.svg?expires=1784990420&amp;signature=9fc52eb74db7c61bca4d2a8a6be9e7861674e5b913cbb4c1e203f8ac4c04ae39"/>
+</div>
+<div class="brand-card-info">
+<h3>Brand Color Background</h3>
+<p>Use on green brand surfaces, marketing materials</p>
+</div>
+</div>
+<!-- Horizontal lockup - wide -->
+<div class="brand-card brand-card--wide">
+<div class="brand-card-preview dark" style="min-height:120px;">
+<img alt="ROM Allen Horizontal Logo" src="logo-horizontal.svg?expires=1784990420&amp;signature=1b3bbb32d0e81a712bc3d5a5b8d1807e0b24b537c901515cf168b9e1e3f95dc8" style="max-height:100px;width:auto;"/>
+</div>
+<div class="brand-card-info">
+<h3>Horizontal Lockup</h3>
+<p>Use in navigation bars, email headers, LinkedIn banners, website headers</p>
+</div>
+</div>
+</div>
+<!-- ── TAGLINE ── -->
+<div class="section-label">Brand Voice</div>
+<div class="tagline-section">
+<div class="tagline-card">
+<div class="tagline-eyebrow">jeROMe · Read Only Memory</div>
+<div class="tagline-main">
+      Rooted in <span>resilience</span>.<br/>
+      Building tools that restore <span>connection</span>.
+    </div>
+<div class="tagline-sub">
+      A UX-minded developer, database wrangler, and community builder.
+      Raised in Vermont, forged through hardship, fueled by hope.
+    </div>
+</div>
+</div>
+<!-- ── COLOR PALETTE ── -->
+<div class="section-label">Color Palette</div>
+<div class="palette-section">
+<div class="palette-grid">
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#2d6a4f;"></div>
+<div class="swatch-name">Forest Green</div>
+<div class="swatch-hex">#2d6a4f</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#40916c;"></div>
+<div class="swatch-name">Emerald</div>
+<div class="swatch-hex">#40916c</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#1b4332;"></div>
+<div class="swatch-name">Deep Forest</div>
+<div class="swatch-hex">#1b4332</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#0f172a;"></div>
+<div class="swatch-name">Midnight</div>
+<div class="swatch-hex">#0f172a</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#1e293b;"></div>
+<div class="swatch-name">Slate Dark</div>
+<div class="swatch-hex">#1e293b</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#334155;"></div>
+<div class="swatch-name">Slate</div>
+<div class="swatch-hex">#334155</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#94a3b8;"></div>
+<div class="swatch-name">Silver</div>
+<div class="swatch-hex">#94a3b8</div>
+</div>
+<div class="palette-swatch">
+<div class="swatch-color" style="background:#ffffff; border:1px solid #e2e8f0;"></div>
+<div class="swatch-name">White</div>
+<div class="swatch-hex">#ffffff</div>
+</div>
+</div>
+</div>
+<!-- ── TYPOGRAPHY ── -->
+<div class="section-label">Typography</div>
+<div class="type-section">
+<div class="type-sample">
+<div class="type-row">
+<span class="type-label">Display</span>
+<span style="font-size:2.5rem;font-weight:900;color:#fff;font-family:'Arial Black',sans-serif;">ROM Allen</span>
+</div>
+<div class="type-row">
+<span class="type-label">jeROMe</span>
+<span style="font-size:1.5rem;color:#94a3b8;font-family:'Arial',sans-serif;">
+        je<strong style="color:#40916c;font-family:'Arial Black',sans-serif;">ROM</strong>e
+      </span>
+</div>
+<div class="type-row">
+<span class="type-label">Tagline</span>
+<span style="font-size:1rem;color:#64748b;letter-spacing:0.15em;text-transform:uppercase;">
+        READ · ONLY · MEMORY
+      </span>
+</div>
+<div class="type-row">
+<span class="type-label">Body</span>
+<span style="font-size:0.95rem;color:#94a3b8;line-height:1.6;max-width:500px;">
+        A technologist rooted in resilience, building tools that restore connection.
+      </span>
+</div>
+<div class="type-row">
+<span class="type-label">Label</span>
+<span style="font-size:0.72rem;font-weight:700;color:#40916c;letter-spacing:0.25em;text-transform:uppercase;">
+        TECHNOLOGIST · BUILDER · RESILIENCE
+      </span>
+</div>
+</div>
+</div>
+<!-- ── USAGE GUIDE ── -->
+<div class="section-label">Usage Guide</div>
+<div class="usage-section">
+<div class="usage-grid">
+<div class="usage-card">
+<h4>✅ Portfolio Website</h4>
+<p>Use the horizontal lockup in the nav. Dark background logo in the hero. Light variant for any white sections.</p>
+</div>
+<div class="usage-card">
+<h4>✅ GitHub Profile</h4>
+<p>Use the square dark logo as your profile picture. Horizontal lockup in your README header.</p>
+</div>
+<div class="usage-card">
+<h4>✅ LinkedIn</h4>
+<p>Square dark logo as profile photo. Horizontal lockup as banner image (stretch to fill).</p>
+</div>
+<div class="usage-card">
+<h4>✅ Email Signature</h4>
+<p>Horizontal lockup at 200px wide. Forest Green for your name, Slate for contact details.</p>
+</div>
+<div class="usage-card">
+<h4>✅ Heads Up Sport</h4>
+<p>The green palette is shared — your personal brand and the app brand are visually unified.</p>
+</div>
+<div class="usage-card">
+<h4>✅ Business Card</h4>
+<p>Dark background with square logo on front. Horizontal lockup + tagline on back.</p>
+</div>
+<div class="usage-card">
+<h4>❌ Don't stretch</h4>
+<p>Never distort the chip proportions. Scale uniformly only.</p>
+</div>
+<div class="usage-card">
+<h4>❌ Don't recolor</h4>
+<p>Keep the green accent consistent. Don't substitute other colors for the chip text or pins.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

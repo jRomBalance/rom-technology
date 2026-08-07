@@ -1,0 +1,160 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" width="380" height="340">
+  <defs>
+    <linearGradient id="bgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="chipV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b4332"/>
+      <stop offset="100%" style="stop-color:#0f2d1f"/>
+    </linearGradient>
+    <linearGradient id="chipFaceV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1f17"/>
+      <stop offset="100%" style="stop-color:#081510"/>
+    </linearGradient>
+    <linearGradient id="greenV2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f"/>
+      <stop offset="100%" style="stop-color:#52b788"/>
+    </linearGradient>
+    <linearGradient id="pinV2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7f8ea3"/>
+      <stop offset="100%" style="stop-color:#b0bec5"/>
+    </linearGradient>
+    <filter id="chipShadowV2">
+      <feDropShadow dx="0" dy="6" stdDeviation="14"
+                    flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowGreenV2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="gridV2" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1a2d3d" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="360" height="340" rx="20" fill="url(#bgV2)"/>
+  <rect width="360" height="340" rx="20" fill="url(#gridV2)" opacity="0.7"/>
+  <rect x="1" y="1" width="358" height="338" rx="19"
+        fill="none" stroke="#1a3a5c" stroke-width="1" opacity="0.5"/>
+
+  <!-- ── CHIP BODY ── -->
+  <rect x="88" y="48" width="184" height="200" rx="14" ry="14"
+        fill="url(#chipV2)" filter="url(#chipShadowV2)"/>
+  <!-- Green top accent -->
+  <rect x="88" y="42" width="184" height="5" rx="3" fill="url(#greenV2)"/>
+  <!-- Chip border -->
+  <rect x="88" y="48" width="184" height="200" rx="14" ry="14"
+        fill="none" stroke="#2d6a4f" stroke-width="1.5" opacity="0.7"/>
+  <!-- Chip edge highlight -->
+  <rect x="88" y="48" width="2" height="200" rx="2"
+        fill="#40916c" opacity="0.2"/>
+
+  <!-- ── LEFT PINS ── -->
+  <rect x="52" y="76"  width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="76"  width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="97"  width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="97"  width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="118" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="118" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="139" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="139" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="160" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="160" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="181" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="181" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="52" y="202" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="52" y="202" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+
+  <!-- ── RIGHT PINS ── -->
+  <rect x="272" y="76"  width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="76"  width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="97"  width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="97"  width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="118" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="118" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="139" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="139" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="160" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="160" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="181" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="181" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="272" y="202" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="303" y="202" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+
+  <!-- ── NOTCH ── -->
+  <path d="M156 48 Q180 24 202 48" fill="#0d1b2a" stroke="#2d6a4f" stroke-width="1.2"/>
+
+  <!-- ── CHIP FACE ── -->
+  <rect x="106" y="68" width="148" height="160" rx="6"
+        fill="url(#chipFaceV2)" stroke="#1b4332" stroke-width="1"/>
+
+  <!-- Scan lines -->
+  <rect x="106" y="90"  width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="112" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="134" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="156" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="178" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="200" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+  <rect x="106" y="218" width="148" height="0.5" fill="#1b4332" opacity="0.5"/>
+
+<!-- ── ROM TEXT ── -->
+  <!-- Glow -->
+  <text x="184" y="148" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif"
+        font-size="62" font-weight="900" text-anchor="middle"
+        fill="#2d6a4f" opacity="0.3" filter="url(#glowGreenV2)">ROM</text>
+  <!-- Main -->
+  <text x="184" y="148" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif"
+        font-size="62" font-weight="900" text-anchor="middle"
+        fill="#ffffff" letter-spacing="6">ROM</text>
+
+  <!-- Green underline under ROM -->
+  <rect x="128" y="155" width="104" height="2.5" rx="1.25"
+        fill="url(#greenV2)" filter="url(#glowGreenV2)"/>
+
+  <!-- Technology subheading INSIDE chip -->
+  <text x="180" y="188" font-family="'Arial', 'Helvetica Neue', sans-serif"
+        font-size="16" font-weight="300" text-anchor="middle"
+        fill="#52b788" letter-spacing="6" opacity="0.9">Technology</text>
+
+  <!-- Thin line above Technology -->
+  <line x1="128" y1="204" x2="232" y2="204"
+        stroke="#52b788" stroke-width="0.6" opacity="0.6"/>
+
+  <!-- ── CORNER NODES ── -->
+  <circle cx="102" cy="62"  r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="258" cy="62"  r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="102" cy="234" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="258" cy="234" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+
+  <!-- Corner traces -->
+  <line x1="102" y1="62"  x2="92" y2="52"  stroke="#2d6a4f" stroke-width="0.8" opacity="0.6"/>
+  <line x1="258" y1="62"  x2="268" y2="52"  stroke="#2d6a4f" stroke-width="0.8" opacity="0.6"/>
+  <line x1="102" y1="234" x2="92" y2="244" stroke="#2d6a4f" stroke-width="0.8" opacity="0.6"/>
+  <line x1="258" y1="234" x2="268" y2="244" stroke="#2d6a4f" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TEXT LOCKUP BELOW CHIP                    -->
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- Divider line -->
+  <line x1="40" y1="262" x2="320" y2="262"
+        stroke="#52b788" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ── Line 2: BUILT · TO · LAST ── -->
+  <text x="180" y="282" font-family="'Arial', 'Helvetica Neue', sans-serif"
+        font-size="13" font-weight="600" text-anchor="middle"
+        fill="#7eb8d4" letter-spacing="6" opacity="0.9">BUILT · TO · LAST</text>
+
+  <!-- Accent lines flanking tagline -->
+  <line x1="40"  y1="292" x2="88" y2="292" stroke="#52b788" stroke-width="0.8" opacity="0.5"/>
+  <line x1="272" y1="292" x2="320" y2="292" stroke="#52b788" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- © jeROMe copyright -->
+  <text x="240" y="300" font-family="'Arial', sans-serif"
+        font-size="9" font-weight="400" text-anchor="middle"
+        fill="#40916c" letter-spacing="1.5">© jeROMe</text>
+
+</svg>

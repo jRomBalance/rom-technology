@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROM Allen — Favicon Preview &amp; Install Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0d1b2a;
+    color: #e2e8f0;
+    padding: 40px 24px;
+  }
+  h1 { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 6px; }
+  .sub { font-size: 0.85rem; color: #64748b; margin-bottom: 40px; }
+
+  .section { margin-bottom: 48px; }
+  .section-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #40916c; margin-bottom: 16px;
+  }
+
+  /* Preview grid */
+  .preview-grid {
+    display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end;
+    margin-bottom: 24px;
+  }
+  .preview-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .preview-item span { font-size: 0.7rem; color: #475569; }
+  .preview-bg-dark  { background: #0d1b2a; padding: 12px; border-radius: 8px; border: 1px solid #1e293b; }
+  .preview-bg-light { background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .preview-bg-tab   { background: #1e293b; padding: 8px 16px; border-radius: 8px 8px 0 0;
+                      display: flex; align-items: center; gap: 8px; border: 1px solid #334155; }
+  .tab-title { font-size: 0.78rem; color: #94a3b8; }
+
+  /* Code blocks */
+  .code-block {
+    background: #111827; border: 1px solid #1e293b; border-radius: 10px;
+    padding: 20px; font-family: 'Courier New', monospace; font-size: 0.8rem;
+    color: #94a3b8; line-height: 1.8; overflow-x: auto;
+  }
+  .code-block .tag { color: #40916c; }
+  .code-block .attr { color: #7eb8d4; }
+  .code-block .val { color: #fbbf24; }
+  .code-block .comment { color: #374151; }
+
+  /* Steps */
+  .steps { display: grid; gap: 12px; }
+  .step {
+    background: #111827; border: 1px solid #1e293b; border-radius: 10px;
+    padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #2d6a4f; color: #fff; font-size: 0.78rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-content h4 { font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
+  .step-content p  { font-size: 0.78rem; color: #64748b; line-height: 1.5; }
+  .step-content code {
+    background: #1e293b; padding: 1px 6px; border-radius: 4px;
+    font-size: 0.75rem; color: #7eb8d4; font-family: monospace;
+  }
+
+  /* File list */
+  .file-list { display: grid; gap: 8px; }
+  .file-item {
+    background: #111827; border: 1px solid #1e293b; border-radius: 8px;
+    padding: 12px 16px; display: flex; align-items: center;
+    justify-content: space-between; gap: 12px;
+  }
+  .file-name { font-size: 0.82rem; font-weight: 600; color: #e2e8f0; font-family: monospace; }
+  .file-use  { font-size: 0.72rem; color: #475569; }
+  .file-size { font-size: 0.7rem; color: #2d6a4f; font-weight: 700; }
+</style>
+</head>
+<body>
+<h1>🎨 ROM Allen — Favicon &amp; Icon Install Guide</h1>
+<p class="sub">All sizes, all platforms, copy-paste ready.</p>
+<!-- ── PREVIEW ── -->
+<div class="section">
+<div class="section-title">Live Preview</div>
+<div class="preview-grid">
+<div class="preview-item">
+<div class="preview-bg-dark">
+<img alt="32px favicon" height="32" src="favicon.svg?expires=1784991395&amp;signature=fd29b6fbdcbc7d9893ed0c2bc21d4e36ce937e0799970d5abe160c967773e32f" width="32"/>
+</div>
+<span>32px — Browser tab</span>
+</div>
+<div class="preview-item">
+<div class="preview-bg-dark">
+<img alt="48px" height="48" src="favicon.svg?expires=1784991395&amp;signature=fd29b6fbdcbc7d9893ed0c2bc21d4e36ce937e0799970d5abe160c967773e32f" width="48"/>
+</div>
+<span>48px — Taskbar</span>
+</div>
+<div class="preview-item">
+<div class="preview-bg-dark">
+<img alt="64px" height="64" src="favicon.svg?expires=1784991395&amp;signature=fd29b6fbdcbc7d9893ed0c2bc21d4e36ce937e0799970d5abe160c967773e32f" width="64"/>
+</div>
+<span>64px — Bookmark</span>
+</div>
+<div class="preview-item">
+<div class="preview-bg-dark">
+<img alt="120px" height="120" src="favicon-512.svg?expires=1784991395&amp;signature=2da4b300fe7d23157f27a3fcee8eb3d691d18019c451d7eb2e34a3f86ea4f759" width="120"/>
+</div>
+<span>120px — App icon</span>
+</div>
+<div class="preview-item">
+<div class="preview-bg-dark">
+<img alt="180px" height="180" src="favicon-512.svg?expires=1784991395&amp;signature=2da4b300fe7d23157f27a3fcee8eb3d691d18019c451d7eb2e34a3f86ea4f759" width="180"/>
+</div>
+<span>180px — Apple Touch</span>
+</div>
+</div>
+<!-- Browser tab simulation -->
+<div class="preview-bg-tab" style="max-width:280px;">
+<img alt="tab icon" height="16" src="favicon.svg?expires=1784991395&amp;signature=fd29b6fbdcbc7d9893ed0c2bc21d4e36ce937e0799970d5abe160c967773e32f" width="16"/>
+<span class="tab-title">ROM Allen — Built to Last</span>
+</div>
+</div>
+<!-- ── FILES ── -->
+<div class="section">
+<div class="section-title">Your Files</div>
+<div class="file-list">
+<div class="file-item">
+<span class="file-name">favicon.svg</span>
+<span class="file-use">Browser tab · 32px optimized</span>
+<span class="file-size">SVG</span>
+</div>
+<div class="file-item">
+<span class="file-name">favicon-512.svg</span>
+<span class="file-use">Apple Touch · Android · App stores</span>
+<span class="file-size">SVG</span>
+</div>
+<div class="file-item">
+<span class="file-name">logo-v2.svg</span>
+<span class="file-use">Main logo · Website hero · GitHub</span>
+<span class="file-size">SVG</span>
+</div>
+<div class="file-item">
+<span class="file-name">logo-horizontal.svg</span>
+<span class="file-use">Nav bar · Email header · LinkedIn banner</span>
+<span class="file-size">SVG</span>
+</div>
+</div>
+</div>
+<!-- ── WORDPRESS INSTALL ── -->
+<div class="section">
+<div class="section-title">WordPress Install — romallen.com</div>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Upload favicon.svg to Media Library</h4>
+<p>WordPress Admin → Media → Add New → upload <code>favicon.svg</code></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Set as Site Icon</h4>
+<p>Appearance → Customize → Site Identity → Site Icon → Select Image → choose your uploaded favicon</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Upload logo-v2.svg as your logo</h4>
+<p>Appearance → Customize → Site Identity → Logo → upload <code>logo-v2.svg</code></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Add Apple Touch Icon (optional but recommended)</h4>
+<p>Upload <code>favicon-512.svg</code> and add to your theme's <code>functions.php</code> or use a plugin like <code>RealFaviconGenerator</code></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h4>Clear cache</h4>
+<p>If you use a caching plugin, clear it after uploading. Browsers cache favicons aggressively — you may need to hard refresh (<code>Ctrl+Shift+R</code>)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ── HTML HEAD CODE ── -->
+<div class="section">
+<div class="section-title">HTML Head Code — paste into your theme's header.php</div>
+<div class="code-block">
+<span class="comment">&lt;!-- ROM Allen Brand Icons --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="val">"icon"</span> <span class="attr">type=</span><span class="val">"image/svg+xml"</span> <span class="attr">href=</span><span class="val">"/favicon.svg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="val">"apple-touch-icon"</span> <span class="attr">sizes=</span><span class="val">"512x512"</span> <span class="attr">href=</span><span class="val">"/favicon-512.svg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name=</span><span class="val">"theme-color"</span> <span class="attr">content=</span><span class="val">"#0d1b2a"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name=</span><span class="val">"msapplication-TileColor"</span> <span class="attr">content=</span><span class="val">"#0d1b2a"</span><span class="tag">&gt;</span>
+<span class="comment">&lt;!-- Open Graph — LinkedIn / social sharing --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property=</span><span class="val">"og:image"</span> <span class="attr">content=</span><span class="val">"/favicon-512.svg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property=</span><span class="val">"og:title"</span> <span class="attr">content=</span><span class="val">"ROM Allen — Built to Last"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property=</span><span class="val">"og:description"</span> <span class="attr">content=</span><span class="val">"A technologist rooted in resilience, building tools that restore connection."</span><span class="tag">&gt;</span>
+</div>
+</div>
+<!-- ── GITHUB README ── -->
+<div class="section">
+<div class="section-title">GitHub README Header — paste at top of README.md</div>
+<div class="code-block">
+&lt;p align="center"&gt;
+  &lt;img src="logo-v2.svg" width="120" height="120" alt="ROM Allen"&gt;
+&lt;/p&gt;
+
+&lt;h1 align="center"&gt;ROM Allen&lt;/h1&gt;
+&lt;p align="center"&gt;
+  &lt;em&gt;Built to Last · A technologist rooted in resilience&lt;/em&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+  &lt;a href="https://romallen.com"&gt;romallen.com&lt;/a&gt; ·
+  &lt;a href="https://linkedin.com/in/romallen"&gt;LinkedIn&lt;/a&gt;
+&lt;/p&gt;
+  </div>
+</div>
+</body>
+</html>

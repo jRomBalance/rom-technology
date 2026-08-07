@@ -1,0 +1,99 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <defs>
+    <linearGradient id="bgH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="chipH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="greenH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f"/>
+      <stop offset="100%" style="stop-color:#40916c"/>
+    </linearGradient>
+    <linearGradient id="pinH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#94a3b8"/>
+      <stop offset="100%" style="stop-color:#cbd5e1"/>
+    </linearGradient>
+    <filter id="glowH">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="120" rx="12" fill="url(#bgH)"/>
+
+  <!-- ── MINI CHIP ICON ── -->
+  <!-- Chip body -->
+  <rect x="20" y="22" width="76" height="76" rx="8" fill="url(#chipH)" stroke="#334155" stroke-width="1"/>
+  <!-- Green top bar -->
+  <rect x="20" y="22" width="76" height="4" rx="3" fill="url(#greenH)"/>
+  <!-- Notch -->
+  <path d="M50 22 Q58 14 66 22" fill="#0a0a0a" stroke="#334155" stroke-width="0.8"/>
+
+  <!-- Left pins -->
+  <rect x="8"  y="32" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="8"  y="46" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="8"  y="60" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="8"  y="74" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="8"  y="88" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+
+  <!-- Right pins -->
+  <rect x="96" y="32" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="96" y="46" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="96" y="60" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="96" y="74" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+  <rect x="96" y="88" width="12" height="6" rx="1.5" fill="url(#pinH)"/>
+
+  <!-- Die area -->
+  <rect x="28" y="30" width="60" height="60" rx="3" fill="#0f172a" stroke="#1e293b" stroke-width="0.8"/>
+
+  <!-- ROM text on chip -->
+  <text x="58" y="67" font-family="'Arial Black', Impact, sans-serif"
+        font-size="22" font-weight="900" text-anchor="middle"
+        fill="#ffffff" letter-spacing="1">ROM</text>
+  <!-- Green underline -->
+  <rect x="36" y="70" width="44" height="2" rx="1" fill="url(#greenH)"/>
+
+  <!-- Corner dots -->
+  <circle cx="32" cy="34" r="2" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="84" cy="34" r="2" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="32" cy="86" r="2" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="84" cy="86" r="2" fill="#2d6a4f" opacity="0.8"/>
+
+  <!-- ── TEXT LOCKUP ── -->
+  <!-- jeROMe name -->
+  <text x="130" y="52" font-family="'Arial', sans-serif"
+        font-size="13" font-weight="400" fill="#64748b" letter-spacing="2">je</text>
+  <text x="152" y="52" font-family="'Arial Black', Impact, sans-serif"
+        font-size="13" font-weight="900" fill="#40916c" letter-spacing="2">ROM</text>
+  <text x="192" y="52" font-family="'Arial', sans-serif"
+        font-size="13" font-weight="400" fill="#64748b" letter-spacing="2">e</text>
+
+  <!-- Main name -->
+  <text x="130" y="80" font-family="'Arial Black', Impact, sans-serif"
+        font-size="32" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ROM Allen</text>
+
+  <!-- Green accent line -->
+  <rect x="130" y="86" width="200" height="2.5" rx="1.25" fill="url(#greenH)"/>
+
+  <!-- Tagline -->
+  <text x="130" y="104" font-family="'Arial', sans-serif"
+        font-size="10" font-weight="400" fill="#475569" letter-spacing="2.5">
+    TECHNOLOGIST · BUILDER · RESILIENCE
+  </text>
+
+  <!-- Right side subtle circuit dots -->
+  <circle cx="560" cy="30" r="1.5" fill="#2d6a4f" opacity="0.4"/>
+  <circle cx="575" cy="45" r="1" fill="#2d6a4f" opacity="0.3"/>
+  <circle cx="550" cy="60" r="1.5" fill="#2d6a4f" opacity="0.4"/>
+  <circle cx="570" cy="75" r="1" fill="#2d6a4f" opacity="0.3"/>
+  <circle cx="555" cy="90" r="1.5" fill="#2d6a4f" opacity="0.4"/>
+  <line x1="560" y1="30" x2="575" y2="45" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+  <line x1="575" y1="45" x2="550" y2="60" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+  <line x1="550" y1="60" x2="570" y2="75" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+  <line x1="570" y1="75" x2="555" y2="90" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+</svg>

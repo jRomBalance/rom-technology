@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="chipV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b4332"/>
+      <stop offset="100%" style="stop-color:#0f2d1f"/>
+    </linearGradient>
+    <linearGradient id="chipFaceV2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1f17"/>
+      <stop offset="100%" style="stop-color:#081510"/>
+    </linearGradient>
+    <linearGradient id="greenV2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f"/>
+      <stop offset="100%" style="stop-color:#52b788"/>
+    </linearGradient>
+    <linearGradient id="pinV2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7f8ea3"/>
+      <stop offset="100%" style="stop-color:#b0bec5"/>
+    </linearGradient>
+    <filter id="chipShadowV2">
+      <feDropShadow dx="0" dy="6" stdDeviation="14"
+                    flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowGreenV2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Grid pattern -->
+    <pattern id="gridV2" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1a2d3d" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="196" fill="url(#bgV2)"/>
+  <!-- Grid overlay -->
+  <circle cx="200" cy="200" r="196" fill="url(#gridV2)" opacity="0.7"/>
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="194" fill="none" stroke="#1a3a5c" stroke-width="1" opacity="0.6"/>
+
+  <!-- ── CHIP BODY ── -->
+  <rect x="108" y="128" width="184" height="144" rx="14" ry="14"
+        fill="url(#chipV2)" filter="url(#chipShadowV2)"/>
+
+  <!-- Chip edge highlight top -->
+  <rect x="108" y="128" width="184" height="2" rx="2"
+        fill="#40916c" opacity="0.6"/>
+  <!-- Chip edge highlight left -->
+  <rect x="108" y="128" width="2" height="144" rx="2"
+        fill="#40916c" opacity="0.3"/>
+
+  <!-- Chip border -->
+  <rect x="108" y="128" width="184" height="144" rx="14" ry="14"
+        fill="none" stroke="#2d6a4f" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- ── LEFT PINS ── -->
+  <rect x="72" y="146" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="146" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="72" y="167" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="167" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="72" y="188" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="188" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="72" y="209" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="209" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="72" y="230" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="230" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="72" y="251" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="72" y="251" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+
+  <!-- ── RIGHT PINS ── -->
+  <rect x="292" y="146" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="146" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="292" y="167" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="167" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="292" y="188" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="188" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="292" y="209" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="209" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="292" y="230" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="230" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+  <rect x="292" y="251" width="36" height="11" rx="2.5" fill="url(#pinV2)"/>
+  <rect x="323" y="251" width="5"  height="11" rx="1.5" fill="#4a5568"/>
+
+  <!-- ── NOTCH ── -->
+  <path d="M183 128 Q200 114 217 128" fill="#0d1b2a" stroke="#2d6a4f" stroke-width="1.2"/>
+
+  <!-- ── CHIP FACE (die area) ── -->
+  <rect x="126" y="148" width="148" height="104" rx="6"
+        fill="url(#chipFaceV2)" stroke="#1b4332" stroke-width="1"/>
+
+  <!-- Subtle scan lines on face -->
+  <rect x="126" y="165" width="148" height="0.5" fill="#1b4332" opacity="0.4"/>
+  <rect x="126" y="182" width="148" height="0.5" fill="#1b4332" opacity="0.4"/>
+  <rect x="126" y="199" width="148" height="0.5" fill="#1b4332" opacity="0.4"/>
+  <rect x="126" y="216" width="148" height="0.5" fill="#1b4332" opacity="0.4"/>
+  <rect x="126" y="233" width="148" height="0.5" fill="#1b4332" opacity="0.4"/>
+
+  <!-- ── ROM TEXT ── -->
+  <!-- Glow layer -->
+  <text x="200" y="218" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif"
+        font-size="58" font-weight="900" text-anchor="middle"
+        fill="#2d6a4f" opacity="0.35" filter="url(#glowGreenV2)">ROM</text>
+  <!-- Main white text -->
+  <text x="200" y="218" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif"
+        font-size="58" font-weight="900" text-anchor="middle"
+        fill="#ffffff" letter-spacing="5">ROM</text>
+
+  <!-- Green underline -->
+  <rect x="144" y="226" width="112" height="3.5" rx="1.75"
+        fill="url(#greenV2)" filter="url(#glowGreenV2)"/>
+
+  <!-- ── CORNER CIRCUIT NODES ── -->
+  <circle cx="122" cy="142" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="278" cy="142" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="122" cy="270" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+  <circle cx="278" cy="270" r="3.5" fill="#2d6a4f" opacity="0.8" filter="url(#glowGreenV2)"/>
+
+  <!-- Corner traces -->
+  <line x1="122" y1="142" x2="108" y2="128" stroke="#2d6a4f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="278" y1="142" x2="292" y2="128" stroke="#2d6a4f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="122" y1="270" x2="108" y2="272" stroke="#2d6a4f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="278" y1="270" x2="292" y2="272" stroke="#2d6a4f" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- ── TAGLINE: BUILT · TO · LAST ── -->
+  <text x="200" y="318" font-family="'Arial', 'Helvetica Neue', sans-serif"
+        font-size="13" font-weight="600" text-anchor="middle"
+        fill="#7eb8d4" letter-spacing="6" opacity="0.9">BUILT · TO · LAST</text>
+
+  <!-- Subtle accent lines flanking tagline -->
+  <line x1="80" y1="314" x2="130" y2="314" stroke="#1a3a5c" stroke-width="0.8" opacity="0.6"/>
+  <line x1="270" y1="314" x2="320" y2="314" stroke="#1a3a5c" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ── jeROMe subtle text ── -->
+  <text x="200" y="345" font-family="'Arial', sans-serif"
+        font-size="11" font-weight="400" text-anchor="middle"
+        fill="#2d4a5a" letter-spacing="2">je</text>
+  <text x="218" y="345" font-family="'Arial Black', sans-serif"
+        font-size="11" font-weight="900" text-anchor="middle"
+        fill="#2d6a4f" letter-spacing="2" opacity="0.7">ROM</text>
+  <text x="238" y="345" font-family="'Arial', sans-serif"
+        font-size="11" font-weight="400" text-anchor="middle"
+        fill="#2d4a5a" letter-spacing="2">e</text>
+
+  <!-- ── OUTER ACCENT DOTS ── -->
+  <circle cx="200" cy="46"  r="2" fill="#2d6a4f" opacity="0.35"/>
+  <circle cx="200" cy="370" r="2" fill="#7eb8d4" opacity="0.35"/>
+  <circle cx="46"  cy="200" r="2" fill="#2d6a4f" opacity="0.35"/>
+  <circle cx="354" cy="200" r="2" fill="#2d6a4f" opacity="0.35"/>
+</svg>
