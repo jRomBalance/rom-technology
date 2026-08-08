@@ -96,6 +96,12 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
+.rom-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ── Logo container ── */
 .rom-logo-wrap {
   display: flex;
@@ -254,7 +260,7 @@ body {
 
 /* ── Hero logo ── */
 .rom-hero-logo {
-  width: min(320px, 80vw);
+  width: min(470px, 90vw);
   height: auto;
   margin-bottom: 32px;
   animation: romLogoEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -266,7 +272,7 @@ body {
 }
 
 .rom-hero-logo img {
-  width: min(320px, 80vw);
+  width: min(470px, 90vw);
   height: auto;
   display: block;
   margin: 0 auto;
@@ -346,7 +352,7 @@ figure.rom-hero-photo,
   font-weight: 400;
   color: var(--rom-silver);
   text-align: center;
-  margin: 0 0 6px;
+  margin: 24px 0 6px;
   letter-spacing: 0.02em;
   animation: romFadeUp 1s 0.5s both;
 }
@@ -355,6 +361,13 @@ figure.rom-hero-photo,
   font-family: var(--rom-font-display);
   font-weight: 900;
   color: var(--rom-green-light);
+}
+
+@media (max-width: 480px) {
+  .rom-hero-jerome {
+    margin-top: 16px;
+    font-size: 1.15rem;
+  }
 }
 
 /* ── Hero name (alternate) ── */
@@ -875,6 +888,12 @@ header.wp-block-template-part.scrolled {
   border-bottom: 1px solid rgba(45, 106, 79, 0.3);
 }
 
+header.wp-block-template-part.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Site logo */
 .wp-block-site-logo img {
   transition: var(--rom-header-transition);
@@ -959,7 +978,7 @@ header.wp-block-template-part.scrolled {
   }
 
   .rom-hero-logo {
-    width: min(260px, 75vw);
+    width: min(382px, 88vw);
   }
 
   .rom-contact-card {

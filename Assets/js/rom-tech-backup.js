@@ -34,14 +34,29 @@
     );
     if (!header) return;
 
-    const SCROLL_THRESHOLD = 80; // px before header shrinks
+    const SCROLL_THRESHOLD = 80;   // px before header shrinks
+    const HIDE_THRESHOLD   = 300;  // px before header hides on scroll down
+
+    let lastScrollY = 0;
 
     function updateHeader() {
-      const scrolled = window.scrollY > SCROLL_THRESHOLD;
+      const currentY  = window.scrollY;
+      const scrolled  = currentY > SCROLL_THRESHOLD;
+      const scrollingDown = currentY > lastScrollY;
+
+      // Shrink after 80px
       header.classList.toggle('scrolled', scrolled);
+
+      // Hide when scrolling down past 300px, show when scrolling up
+      if (currentY > HIDE_THRESHOLD && scrollingDown) {
+        header.classList.add('hidden');
+      } else if (!scrollingDown) {
+        header.classList.remove('hidden');
+      }
+
+      lastScrollY = currentY;
     }
 
-    // Throttled scroll listener
     let ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {

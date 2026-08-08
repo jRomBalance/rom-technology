@@ -95,3 +95,72 @@
   position: relative;
   z-index: 1;
 }
+
+/* ── Remove all WordPress padding on blank template ── */
+.page-template-blank .wp-block-post-content,
+.page-template-blank .entry-content,
+.page-template-blank .wp-block-group,
+.page-template-blank main,
+.page-template-blank .wp-site-blocks,
+.page-template-blank .wp-site-blocks > * {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Remove top gap */
+.page-template-blank body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Make app fill full width */
+.page-template-blank #btg-scheduler-root {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ── Override dark body background on app page ── */
+.page-template-blank body,
+.page-template-blank .wp-site-blocks,
+.page-slug-berkshire-tennis body,
+.page-slug-berkshire-tennis .wp-site-blocks {
+  background-color: #f8fafc !important;
+  background-image: url('/wp-content/themes/rom-technology/assets/images/circuit-bg.svg') !important;
+  background-repeat: repeat !important;
+  background-size: 40px 40px !important;
+  color: #1e293b !important;
+}
+
+/* ── Remove the dark overlay that rom-tech.css applies globally ── */
+.page-template-blank .rom-circuit-overlay {
+  display: none !important;
+}
+
+/* Blank template pages get circuit background */
+.page-template-blank {
+  background-color: #f8fafc !important;
+  background-image: url('/wp-content/themes/rom-technology/assets/images/circuit-bg.svg') !important;
+  background-repeat: repeat !important;
+  background-size: 40px 40px !important;
+}
+
+.page-template-blank .wp-site-blocks {
+  background: transparent !important;
+}
+
+.page-template-blank #btg-scheduler-root {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix Live Score overlay on blank template */
+.page-template-blank .scorer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+}
